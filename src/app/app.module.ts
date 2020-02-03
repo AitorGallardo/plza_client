@@ -7,18 +7,24 @@ import { SidebarComponent } from './sidebar/sidebar.component';
 import { EventsComponent } from './events/events.component';
 import { DetailsComponent } from './details/details.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import {AgmCoreModule} from '@agm/core';
+import { MainMapComponent } from './main-map/main-map.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     SidebarComponent,
     EventsComponent,
-    DetailsComponent
+    DetailsComponent,
+    MainMapComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
-    BrowserAnimationsModule
+    BrowserAnimationsModule,
+    AgmCoreModule.forRoot({
+      apiKey:'AIzaSyC-VC074vkUxKjfBLR-PZsnkryEEBjI2rI'
+    })
   ],
   providers: [],
   bootstrap: [AppComponent]

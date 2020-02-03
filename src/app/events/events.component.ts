@@ -74,7 +74,7 @@ export class EventsComponent implements OnInit {
   ngOnInit() {
   }
   navigate(id: number){
-    this.router.navigate(['details/', id]);
+    this.router.navigate(['event/', id]);
   }
 
 }
