@@ -8,7 +8,10 @@ import { EventsComponent } from './events/events.component';
 import { DetailsComponent } from './details/details.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import {AgmCoreModule} from '@agm/core';
-import { MainMapComponent } from './main-map/main-map.component';
+import { MainMapComponent } from './home-page/main-map/main-map.component';
+import { LoadingPageComponent } from './loading-page/loading-page.component';
+import { HomePageComponent } from './home-page/home-page.component';
+import { NavbarComponent } from './home-page/navbar/navbar.component';
 
 @NgModule({
   declarations: [
@@ -16,7 +19,10 @@ import { MainMapComponent } from './main-map/main-map.component';
     SidebarComponent,
     EventsComponent,
     DetailsComponent,
-    MainMapComponent
+    MainMapComponent,
+    LoadingPageComponent,
+    HomePageComponent,
+    NavbarComponent
   ],
   imports: [
     BrowserModule,

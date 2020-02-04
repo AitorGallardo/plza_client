@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { Plugins } from '@capacitor/core';
 
 @Component({
   selector: 'app-root',
@@ -6,5 +7,15 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.sass']
 })
 export class AppComponent {
-  title = 'plza';
+
+  loadingPage = true;
+
+
+
+  constructor() {
+    setTimeout(() => {
+      this.loadingPage = false;
+    }, 1750);
+  }
+
 }

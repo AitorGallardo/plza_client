@@ -1,4 +1,5 @@
-<div id="container">
+<app-loading-page *ngIf="loadingPage"></app-loading-page>
+<div id="container" *ngIf="!loadingPage">
   <app-sidebar></app-sidebar>
   <div id="content">
     <router-outlet></router-outlet>
