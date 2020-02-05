@@ -6,7 +6,12 @@
             </a>
         </li>
         <li>
-            <a routerLink="/events" [class.active]="currentUrl == '/events'">
+            <a routerLink="/event/create" [class.active]="currentUrl == '/event/create'">
+                <i class="material-icons"> add</i>
+            </a>
+        </li>
+        <li>
+            <a routerLink="/event" [class.active]="currentUrl == '/event'">
                 <i class="material-icons"> event</i>
             </a>
         </li>

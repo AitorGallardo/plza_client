@@ -16,7 +16,8 @@ export class AppComponent {
 
 
   constructor() {
-
+    
+  // custom splashscreen
     setTimeout(() => {
       this.loadingPage = false;
     }, 1750);
