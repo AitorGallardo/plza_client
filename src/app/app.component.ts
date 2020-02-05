@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { Plugins, SplashScreen } from '@capacitor/core';
+import { Plugins} from '@capacitor/core';
 
 
 @Component({
@@ -16,7 +16,7 @@ export class AppComponent {
 
 
   constructor() {
-    SplashScreen.hide();
+
     setTimeout(() => {
       this.loadingPage = false;
     }, 1750);
