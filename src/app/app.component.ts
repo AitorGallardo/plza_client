@@ -1,6 +1,8 @@
 import { Component } from '@angular/core';
 import { Plugins} from '@capacitor/core';
 
+const {SplashScreen} = Plugins;
+
 
 @Component({
   selector: 'app-root',
@@ -16,7 +18,10 @@ export class AppComponent {
 
 
   constructor() {
-    
+
+  // Hide splash screen on mobile
+    SplashScreen.hide();
+
   // custom splashscreen
     setTimeout(() => {
       this.loadingPage = false;
