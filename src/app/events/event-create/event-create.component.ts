@@ -9,6 +9,8 @@ import { FormBuilder } from '@angular/forms';
 export class EventCreateComponent implements OnInit {
   checkoutForm
   items
+  lat=41.3851;
+  lon=2.1734;
   public currentDate = null;
 
   constructor(private formBuilder: FormBuilder) { 
