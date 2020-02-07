@@ -14,6 +14,7 @@ import { HomePageComponent } from './home-page/home-page.component';
 import { NavbarComponent } from './home-page/navbar/navbar.component';
 import { EventCreateComponent } from './events/event-create/event-create.component';
 import { ReactiveFormsModule } from '@angular/forms'; 
+import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
   declarations: [
@@ -32,6 +33,7 @@ import { ReactiveFormsModule } from '@angular/forms';
     AppRoutingModule,
     BrowserAnimationsModule,
     ReactiveFormsModule,
+    HttpClientModule,
     AgmCoreModule.forRoot({
       apiKey:'AIzaSyC-VC074vkUxKjfBLR-PZsnkryEEBjI2rI'
     })

@@ -3,7 +3,7 @@
 
   <form [formGroup]="checkoutForm" (ngSubmit)="onSubmit(checkoutForm.value)">
     <div class="map">
-      <agm-map [latitude]="lat" [longitude]="lon" [zoom]="12">
+      <agm-map [latitude]="lat" [longitude]="lon" [zoom]="12" [disableDefaultUI]="true">
 
       </agm-map>
     </div>
