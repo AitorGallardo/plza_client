@@ -1,9 +1,65 @@
 <div class="container">
-  <h1>{{ event.name }}</h1>
-  
-  <ul>
-    <li><strong>Date: </strong>{{ event.date }}</li>
-    <li><strong>Participants: </strong>{{ event.participants }}</li>
-  </ul>
-</div>
+  <h1>Event Details</h1>
 
+  <div class="content">
+    <div class="top-content">
+      <div class="image">
+        <img [src]="image">
+      </div>
+
+      <div class="info">
+        <div class="top-side">
+          <div class="field">
+            <div class="title">{{ event.name }}</div>
+          </div>
+          <div class="field">
+            <i class="material-icons field-icon">
+              group
+            </i>
+            7 miembros
+          </div>
+          <div class="field">
+  
+            <i class="material-icons field-icon">
+              location_on
+            </i>
+            Barcelona, España
+          </div>
+          <div class="field">
+            <i class="material-icons field-icon">
+              person
+            </i>
+            Organized by <b>sergihcc</b>
+          </div>
+        </div>
+        <div class="bottom-side">
+          <div class="field button-field">
+            <button class="join-button" type="submit">Join</button>
+            <i class="material-icons icon-share">
+              share
+            </i>
+          </div>
+        </div>
+
+      </div>
+    </div>
+    <div class="bottom-content">
+        <h4>Description</h4>
+        <p class="description">
+  
+          1914 translation by H. Rackham
+          "But I must explain to you how all this mistaken idea of denouncing pleasure and praising pain was born and I
+          will give you a complete account of the system, and expound the actual teachings of the great explorer of the
+          truth, the master-builder of human happiness. No one rejects, dislikes, or avoids pleasure itself, because it is
+          pleasure, but because those who do not know how to pursue pleasure rationally encounter consequences that are
+          extremely painful. Nor again is there anyone who loves or pursues or desires to obtain pain of itself, because
+          it is pain, but because occasionally circumstances occur in which toil and pain can procure him some great
+          pleasure. To take a trivial example, which of us ever undertakes laborious physical exercise, except to obtain
+          some advantage from it? But who has any right to find fault with a man who chooses to enjoy a pleasure that has
+          no annoying consequences, or one who avoids a pain that produces no resultant pleasure?"</p>
+  
+        <h4>Comment</h4>
+        <textarea name="" id="" cols="60" rows="10"></textarea>
+    </div>
+  </div>
+</div>
