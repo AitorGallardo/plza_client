@@ -11,7 +11,6 @@ export class EventDetailsComponent implements OnInit {
   image = 'assets/icons/canxa_basket.jpg';
   showDescriptionText = 'Show more';
   showMoreDescription = false;
-  textareC
   allEvents = [
     {
       id: 1,
