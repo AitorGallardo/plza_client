@@ -9,7 +9,9 @@ import { ActivatedRoute } from '@angular/router';
 export class EventDetailsComponent implements OnInit {
 
   image = 'assets/icons/canxa_basket.jpg';
-
+  showDescriptionText = 'Show more';
+  showMoreDescription = false;
+  textareC
   allEvents = [
     {
       id: 1,
@@ -86,4 +88,12 @@ export class EventDetailsComponent implements OnInit {
     });
   }
 
+  showHiddeDescriptionText(){
+    this.showMoreDescription = !this.showMoreDescription
+    if(this.showMoreDescription){
+      this.showDescriptionText = 'Show less'
+    } else{
+      this.showDescriptionText = 'Show more'
+    }
+  }
 }
