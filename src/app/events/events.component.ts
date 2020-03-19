@@ -1,6 +1,8 @@
+import { EventService } from './../event.service';
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { trigger,style,transition,animate,keyframes,query,stagger } from '@angular/animations';
+import { ThrowStmt } from '@angular/compiler';
 
 @Component({
   selector: 'app-events',
@@ -34,47 +36,22 @@ import { trigger,style,transition,animate,keyframes,query,stagger } from '@angul
 
 export class EventsComponent implements OnInit {
 
-  events = [
-    {
-      id: 1,
-      name: 'Plaza pepe',
-      date: '23/02/2020',
-      participants: 8
-    },
-    {
-      id: 2,
-      name: 'Plaza pepe',
-      date: '23/02/2020',
-      participants: 8
-    },
-    {
-      id: 3,
-      name: 'Plaza pepe',
-      date: '23/02/2020',
-      participants: 8
-    },
-    {
-      id: 4,
-      name: 'Plaza pepe',
-      date: '23/02/2020',
-      participants: 8
-    },
-    {
-      id: 5,
-      name: 'Plaza pepe',
-      date: '23/02/2020',
-      participants: 8
-    },
-  ];
+  events = [];
 
-  constructor(private router: Router) {
-
+  constructor(private router: Router, private eventService: EventService) {
+    this.eventService.getAllEvents().subscribe(res=>{
+      this.events = res;
+      
+    });
   }
 
   ngOnInit() {
   }
   navigate(id: number){
     this.router.navigate(['event/', id]);
+  }
+  testpost(){
+    this.eventService.createEvent(this.events[0]);
   }
 
 }

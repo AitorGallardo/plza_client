@@ -7,14 +7,15 @@ import { environment } from 'src/environments/environment';
 })
 export class BasicRequestsService {
 
-  url = environment.api;
+  API_URL = environment.api;
+  event_url = '/api/event'
 
   constructor(private http: HttpClient) { }
 
 
   getAll() {
-    this.http.get(this.url).subscribe(res=>{
-      console.log(res)
+    this.http.get(this.API_URL).subscribe(res=>{
+      console.log('QUE ME DAS', res)
     });
   }
 
