@@ -1,7 +1,7 @@
 <div class="container">
   <h1>Create event</h1>
 
-  <form [formGroup]="checkoutForm" (ngSubmit)="onSubmit(checkoutForm.value)">
+  <form [formGroup]="form" (ngSubmit)="onSubmit()">
     <div class="map">
       <agm-map [latitude]="lat" [longitude]="lon" [zoom]="12" [disableDefaultUI]="true">
 
@@ -19,19 +19,19 @@
             N.participants
           </label>
 
-        <input id="participants" type="number" placeholder="N. of participants">
+        <input id="participants" type="number" placeholder="N. of participants" formControlName="nParticipants">
       </div>
       <div class="field date">
         <label for="date">
             Date
           </label>
-        <input id="date" type="date" [value]="currentDate" [min]="currentDate">
+        <input id="date" type="date" [value]="currentDate" [min]="currentDate" formControlName="date">
       </div>
       <div class="field hour">
         <label for="time">
           Time
         </label>
-        <input id="time" type="time" [value]="currentDate" [min]="currentDate">
+        <input id="time" type="time" [value]="currentDate" [min]="currentDate" formControlName="time">
 
       </div>
 

@@ -2,13 +2,9 @@
   <h1>Events</h1>
   <ul [@listStagger]="events">
     <li *ngFor="let event of events">
-      <a (click)="navigate(event.name)">{{ event.name }}</a>
-  
-      <ul>
-  
+      <a (click)="navigate(event)">{{ event.name }}</a>  
+      <ul>  
       </ul>
     </li>
   </ul>
-
-  <button (click)="testpost()"> SEND</button>
 </div>

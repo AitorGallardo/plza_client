@@ -15,7 +15,6 @@ export class BasicRequestsService {
 
   getAll() {
     this.http.get(this.API_URL).subscribe(res=>{
-      console.log('QUE ME DAS', res)
     });
   }
 

@@ -1,8 +1,8 @@
 import { EventService } from './../event.service';
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
-import { trigger,style,transition,animate,keyframes,query,stagger } from '@angular/animations';
-import { ThrowStmt } from '@angular/compiler';
+import { trigger, style, transition, animate, keyframes, query, stagger } from '@angular/animations';
+import { Event } from '../models/Event';
 
 @Component({
   selector: 'app-events',
@@ -39,19 +39,31 @@ export class EventsComponent implements OnInit {
   events = [];
 
   constructor(private router: Router, private eventService: EventService) {
-    this.eventService.getAllEvents().subscribe(res=>{
+    this.eventService.getAllEvents().subscribe(res => {
+
       this.events = res;
-      
+      console.log('ALL EVENTS', this.events);
+
     });
   }
 
   ngOnInit() {
   }
-  navigate(id: number){
-    this.router.navigate(['event/', id]);
+  navigate(event: Event) {
+    this.eventService.currentEventId = event.id;
+    this.router.navigate(['event/', event.name]);
   }
-  testpost(){
-    this.eventService.createEvent(this.events[0]);
+  create() {
+    this.eventService.createEvent(this.events[0]).subscribe(res => {
+
+    })
+  }
+  delete(id: string, event) {
+    event.stopPropagation();
+    this.eventService.deleteEvent(this.events[0]).subscribe(res => {
+      console.log('event deleted succesfully');
+
+    });
   }
 
 }

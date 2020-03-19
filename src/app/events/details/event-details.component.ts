@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
+import { EventService } from 'src/app/event.service';
 
 @Component({
   selector: 'app-event-details',
@@ -76,22 +77,31 @@ export class EventDetailsComponent implements OnInit {
 
   event = null;
 
-  constructor(private routes: ActivatedRoute) {
-
+  constructor(private routes: ActivatedRoute, private eventService: EventService) {
   }
 
   ngOnInit() {
     this.routes.params.subscribe(params => {
-      const id = params['id'];
-      this.event = this.allEvents.filter(event => event.id == id)[0];
+
+      const id = this.eventService.currentEventId;
+
+      this.eventService.getEvent(id).subscribe(res => {
+
+        console.log('THISEVENT',res);
+        
+        this.event = res;
+
+      })
+
+
     });
   }
 
-  showHiddeDescriptionText(){
+  showHiddeDescriptionText() {
     this.showMoreDescription = !this.showMoreDescription
-    if(this.showMoreDescription){
+    if (this.showMoreDescription) {
       this.showDescriptionText = 'Show less'
-    } else{
+    } else {
       this.showDescriptionText = 'Show more'
     }
   }
