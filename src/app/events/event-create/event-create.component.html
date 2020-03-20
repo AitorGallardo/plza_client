@@ -3,9 +3,12 @@
 
   <form [formGroup]="form" (ngSubmit)="onSubmit()">
     <div class="map">
-      <agm-map [latitude]="lat" [longitude]="lon" [zoom]="12" [disableDefaultUI]="true">
+      <!-- <agm-map [latitude]="lat" [longitude]="lon" [zoom]="12" [disableDefaultUI]="true">
 
-      </agm-map>
+      </agm-map> -->
+
+      <div class="agm-map" #mapContainer ></div>
+
     </div>
     <div class="form-fields">
       <div class="field name">

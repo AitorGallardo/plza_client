@@ -1,20 +1,40 @@
 import { EventService } from 'src/app/event.service';
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ViewChild,ElementRef, AfterViewInit } from '@angular/core';
 import { FormBuilder, FormGroup } from '@angular/forms';
 import { Event } from '../../models/Event';
+import { MapsAPILoader } from '@agm/core';
+
 
 @Component({
   selector: 'app-event-create',
   templateUrl: './event-create.component.html',
   styleUrls: ['./event-create.component.sass']
 })
-export class EventCreateComponent implements OnInit {
-  items
-  lat = 41.3851;
-  lon = 2.1734;
+export class EventCreateComponent implements OnInit, AfterViewInit {
+
   public currentDate = null;
   form: FormGroup;
-  constructor(private formBuilder: FormBuilder, private eventService: EventService) {
+
+  // map vars
+  map: google.maps.Map;
+  lat = 41.3851;
+  lon = 2.1734;
+  coordinates;
+  mapOptions: google.maps.MapOptions;
+  @ViewChild('mapContainer', {static: false}) gmap: ElementRef;
+
+
+  constructor(private formBuilder: FormBuilder, private eventService: EventService,private mapsAPILoader: MapsAPILoader) {
+
+    // this service ensures that  Google Maps API is loaded
+    this.mapsAPILoader.load().then(()=>{
+      this.coordinates = new google.maps.LatLng(this.lat, this.lon);
+      this.mapOptions= {
+        center: this.coordinates,
+        zoom: 12,
+        disableDefaultUI: true
+      };
+    });
     this.form = this.formBuilder.group({
       name: '',
       nParticipants: '',
@@ -29,8 +49,16 @@ export class EventCreateComponent implements OnInit {
     const date = new Date()
   }
 
+  ngAfterViewInit() {
+    this.mapInitializer();
+   }
+
+  mapInitializer() {
+    this.map = new google.maps.Map(this.gmap.nativeElement, 
+    this.mapOptions);
+   }
+
   onSubmit() {
-    // Process checkout data here
     console.warn('Your order has been submitted', this.form.value);
     const event = new Event();
     event.name = this.form.get('name').value;
@@ -38,8 +66,6 @@ export class EventCreateComponent implements OnInit {
     const date = this.form.get('date').value;
     const time = this.form.get('time').value;
     event.date = this.generateDate(date, time);
-    console.log(event.date);
-    
     event.latitude = 43;
     event.longitude = 2;
 
@@ -68,6 +94,16 @@ export class EventCreateComponent implements OnInit {
     console.log(minutes);
 
     return new Date(Date.UTC(year, month, day, hours, minutes));
+  }
+
+  setMarker(lat,lon){
+    let marker = new google.maps.Marker({
+      position: {lat:lat,lng:lon},
+      map: this.map 
+
+    });
+
+    marker.setMap(this.map);
   }
 
 }

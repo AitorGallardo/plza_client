@@ -23,6 +23,7 @@
     "@capacitor/android": "^1.5.0",
     "@capacitor/angular": "^1.0.0",
     "@capacitor/core": "latest",
+    "@types/googlemaps": "^3.39.3",
     "rxjs": "~6.4.0",
     "tslib": "^1.10.0",
     "zone.js": "~0.9.1"
