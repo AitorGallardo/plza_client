@@ -1,0 +1,8 @@
+<input
+  style="display: none"
+  type="file" (change)="onFileChanged($event)"
+  #fileInput>
+
+  <div class="rectangle" (click)="fileInput.click()">
+      <img [src]="imageSrc" height="200" width="200" *ngIf="imageSrc">
+  </div>

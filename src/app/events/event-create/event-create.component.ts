@@ -16,6 +16,7 @@ export class EventCreateComponent implements OnInit, AfterViewInit {
   public currentDate = null;
   form: FormGroup;
   submitted = false;
+  image = null;
   // map vars
   map: google.maps.Map;
   lat = 41.3851;
@@ -70,7 +71,7 @@ export class EventCreateComponent implements OnInit, AfterViewInit {
       event.date = this.generateDate(date, time);
       event.latitude = this.marker.getPosition().lat();
       event.longitude = this.marker.getPosition().lng();
-
+      event.image = this.image;
       this.eventService.createEvent(event).subscribe(res => {
         this.onReset();
       });

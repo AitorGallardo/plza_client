@@ -15,6 +15,7 @@ import { NavbarComponent } from './home-page/navbar/navbar.component';
 import { EventCreateComponent } from './events/event-create/event-create.component';
 import { ReactiveFormsModule } from '@angular/forms'; 
 import { HttpClientModule } from '@angular/common/http';
+import { FileUploaderComponent } from './file-uploader/file-uploader.component';
 
 @NgModule({
   declarations: [
@@ -26,7 +27,8 @@ import { HttpClientModule } from '@angular/common/http';
     LoadingPageComponent,
     HomePageComponent,
     NavbarComponent,
-    EventCreateComponent
+    EventCreateComponent,
+    FileUploaderComponent
   ],
   imports: [
     BrowserModule,
