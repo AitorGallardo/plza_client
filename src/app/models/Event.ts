@@ -10,7 +10,7 @@ export class Event {
    longitude: number;
    date: Date;
    owner: string;
-   maxMembers: number;
+   max_members: number;
    members: Array<string>;
 
 
@@ -32,7 +32,7 @@ export class Event {
          event.longitude = json.longitude ? json.longitude : -1;
          event.date = json.date ? json.date : null;
          event.owner = json.owner ? json.owner : null;
-         event.maxMembers = json.maxMembers ? json.maxMembers : 1;
+         event.max_members = json.max_members ? json.max_members : 1;
          event.members = json.members ? json.members : null;
       }
 

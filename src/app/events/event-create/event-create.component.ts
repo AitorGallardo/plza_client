@@ -4,6 +4,7 @@ import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { Event } from '../../models/Event';
 import { MapsAPILoader } from '@agm/core';
 import { ThrowStmt } from '@angular/compiler';
+import { Router } from '@angular/router';
 
 
 @Component({
@@ -27,7 +28,8 @@ export class EventCreateComponent implements OnInit, AfterViewInit {
   @ViewChild('mapContainer', { static: false }) gmap: ElementRef;
 
 
-  constructor(private formBuilder: FormBuilder, private eventService: EventService, private mapsAPILoader: MapsAPILoader) {
+  constructor(private formBuilder: FormBuilder, private eventService: EventService, 
+    private mapsAPILoader: MapsAPILoader, private router: Router) {
 
     // this service ensures that  Google Maps API is loaded
     this.mapsAPILoader.load().then(() => {
@@ -50,6 +52,11 @@ export class EventCreateComponent implements OnInit, AfterViewInit {
     this.currentDate = new Date().toISOString().slice(0, 10);
   }
 
+  navigate(event: Event) {
+    this.eventService.currentEventId = event.id;
+    this.router.navigate(['event/', event.name]);
+  }
+
   ngAfterViewInit() {
     this.mapInitializer();
   }
@@ -65,7 +72,7 @@ export class EventCreateComponent implements OnInit, AfterViewInit {
     if (this.form.valid && this.marker) {
       const event = new Event();
       event.name = this.form.get('name').value;
-      event.maxMembers = this.form.get('nParticipants').value;
+      event.max_members = this.form.get('nParticipants').value;
       const date = this.form.get('date').value;
       const time = this.form.get('time').value;
       event.date = this.generateDate(date, time);
@@ -73,7 +80,8 @@ export class EventCreateComponent implements OnInit, AfterViewInit {
       event.longitude = this.marker.getPosition().lng();
       event.image = this.image;
       this.eventService.createEvent(event).subscribe(res => {
-        this.onReset();
+        this.navigate(res);
+        //this.onReset();
       });
     } else {
 
