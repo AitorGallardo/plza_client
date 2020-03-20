@@ -56,6 +56,13 @@
           {{event.description}}
         </p>
       <div *ngIf="event.description" class="showTextButton" (click)="showHiddeDescriptionText()">{{showDescriptionText}}</div>
+      <h4>Participants</h4>
+      <div class="participants-grid" >
+        <div class="member-container" *ngFor="let member of event.members">
+          <div class="member-avatar"></div>
+          <div class="member-name">{{member}}</div>
+        </div>
+      </div>
       <h4>Comment</h4>
       <textarea rows="10"></textarea>
     </div>

@@ -81,6 +81,27 @@ h1
     &:hover
         border: 1px solid #bbbbbb
 
+.participants-grid
+    display: grid
+    grid-template-columns: repeat(auto-fit, minmax(50px, 1fr))
+    justify-items: center
+    .member-container
+        display: flex
+        width: 100%
+        padding: 10px
+        flex-direction: column
+        align-items: center
+        font-size: 12px
+        text-align: center
+        word-break: break-word
+        .member-avatar
+            height: 40px
+            width: 40px
+            border-radius: 50px
+            background-color: #006bff54
+            margin-bottom: 5px
+        .member-name
+
 
 @media (max-width: 768px)
     .container
