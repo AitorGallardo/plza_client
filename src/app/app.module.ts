@@ -16,6 +16,8 @@ import { EventCreateComponent } from './events/event-create/event-create.compone
 import { ReactiveFormsModule } from '@angular/forms'; 
 import { HttpClientModule } from '@angular/common/http';
 import { FileUploaderComponent } from './file-uploader/file-uploader.component';
+import { FooterbarComponent } from './footerbar/footerbar.component';
+import { MatIconModule } from '@angular/material/icon';
 
 @NgModule({
   declarations: [
@@ -28,7 +30,8 @@ import { FileUploaderComponent } from './file-uploader/file-uploader.component';
     HomePageComponent,
     NavbarComponent,
     EventCreateComponent,
-    FileUploaderComponent
+    FileUploaderComponent,
+    FooterbarComponent
   ],
   imports: [
     BrowserModule,
@@ -36,6 +39,7 @@ import { FileUploaderComponent } from './file-uploader/file-uploader.component';
     BrowserAnimationsModule,
     ReactiveFormsModule,
     HttpClientModule,
+    MatIconModule,
     AgmCoreModule.forRoot({
       apiKey:'AIzaSyC-VC074vkUxKjfBLR-PZsnkryEEBjI2rI'
     })
