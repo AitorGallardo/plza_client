@@ -21,6 +21,7 @@ export class EventCreateComponent implements OnInit, AfterViewInit {
   lon = 2.1734;
   coordinates;
   mapOptions: google.maps.MapOptions;
+  marker:google.maps.Marker;
   @ViewChild('mapContainer', {static: false}) gmap: ElementRef;
 
 
@@ -56,6 +57,11 @@ export class EventCreateComponent implements OnInit, AfterViewInit {
   mapInitializer() {
     this.map = new google.maps.Map(this.gmap.nativeElement, 
     this.mapOptions);
+    this.map.addListener("click", (event) => {
+      console.log('map info',event.latLng);
+  this.setMarker(event.latLng)
+
+    });
    }
 
   onSubmit() {
@@ -96,14 +102,16 @@ export class EventCreateComponent implements OnInit, AfterViewInit {
     return new Date(Date.UTC(year, month, day, hours, minutes));
   }
 
-  setMarker(lat,lon){
-    let marker = new google.maps.Marker({
-      position: {lat:lat,lng:lon},
+  setMarker(latlng){
+    if(this.marker){
+      this.marker.setMap(null);
+    }
+    this.marker = new google.maps.Marker({
+      position: latlng,
       map: this.map 
-
+      
     });
-
-    marker.setMap(this.map);
+    this.marker.setMap(this.map);
   }
 
 }
