@@ -7,6 +7,13 @@ h1
 .agm-map
     width: auto
     height: 200px
+    &.is-invalid
+        border: 1px solid #fc0317
+
+.invalid-map
+    padding-top: 5px 
+    color: #fc0317
+    font-size: 12px
 
 form
     display: grid
@@ -26,7 +33,11 @@ form
         .field
             display: flex
             flex-direction: column
-            margin: 10px 0px  
+            margin: 10px 0px
+            .invalid-field
+                padding-top: 5px 
+                color: #fc0317
+                font-size: 12px
             &.name
                 grid-column: span 3
             &.participants
@@ -52,6 +63,8 @@ input, textarea
   outline: none
   &:focus
     border: 1px solid #00A8FF
+  &.is-invalid
+    border: 1px solid #fc0317
 
 
 
@@ -67,6 +80,9 @@ button
     cursor: pointer
     &:hover
         background-color: #00A8FF
+    &.disabled
+        background-color: #00a8ff6e
+
 
 
 @media (max-width: 768px)

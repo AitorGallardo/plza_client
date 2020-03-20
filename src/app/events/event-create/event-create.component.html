@@ -7,15 +7,16 @@
 
       </agm-map> -->
 
-      <div class="agm-map" #mapContainer ></div>
-
+      <div class="agm-map" #mapContainer [ngClass]="{ 'is-invalid': submitted && !this.marker }"></div>
+      <div *ngIf="submitted && !this.marker" class="invalid-map">Location is required</div>
     </div>
     <div class="form-fields">
       <div class="field name">
         <label for="name">
             Name
           </label>
-        <input id="name" type="text" placeholder="Name" formControlName="name">
+        <input id="name" type="text" placeholder="Name" formControlName="name" [ngClass]="{ 'is-invalid': submitted && f.name.errors }">
+        <div *ngIf="submitted && f.name.errors" class="invalid-field">Name is required</div>
       </div>
       <div class="field participants">
         <label for="participants">
@@ -28,14 +29,15 @@
         <label for="date">
             Date
           </label>
-        <input id="date" type="date" [value]="currentDate" [min]="currentDate" formControlName="date">
+        <input id="date" type="date" [value]="currentDate" [min]="currentDate" formControlName="date" [ngClass]="{ 'is-invalid': submitted && f.date.errors }">
+        <div *ngIf="submitted && f.date.errors" class="invalid-field">Date is required</div>
       </div>
       <div class="field hour">
         <label for="time">
           Time
         </label>
-        <input id="time" type="time" [value]="currentDate" [min]="currentDate" formControlName="time">
-
+        <input id="time" type="time" [value]="currentDate" [min]="currentDate" formControlName="time" [ngClass]="{ 'is-invalid': submitted && f.time.errors }">
+        <div *ngIf="submitted && f.time.errors" class="invalid-field">Time is required</div>
       </div>
 
       <div class="field button">
