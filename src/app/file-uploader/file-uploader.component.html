@@ -4,5 +4,8 @@
   #fileInput>
 
   <div class="rectangle" (click)="fileInput.click()">
+    <span class="material-icons" *ngIf="!imageSrc">
+        insert_photo
+    </span>
       <img [src]="imageSrc" height="200" width="200" *ngIf="imageSrc">
   </div>
