@@ -18,6 +18,7 @@ import { HttpClientModule } from '@angular/common/http';
 import { FileUploaderComponent } from './file-uploader/file-uploader.component';
 import { FooterbarComponent } from './footerbar/footerbar.component';
 import { MatIconModule } from '@angular/material/icon';
+import { MainbarComponent } from './mainbar/mainbar.component';
 
 @NgModule({
   declarations: [
@@ -31,7 +32,8 @@ import { MatIconModule } from '@angular/material/icon';
     NavbarComponent,
     EventCreateComponent,
     FileUploaderComponent,
-    FooterbarComponent
+    FooterbarComponent,
+    MainbarComponent
   ],
   imports: [
     BrowserModule,
