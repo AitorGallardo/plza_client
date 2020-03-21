@@ -1,6 +1,11 @@
 <div class="footer">
-    <mat-icon svgIcon="unicorn"></mat-icon>        
-    <span class="material-icons">home</span>
-    <span class="material-icons">search</span>
-    <span class="material-icons">add</span>
+    <a routerLink="" [class.active]="currentUrl == '/'">
+        <span class="material-icons">home</span>
+    </a>
+    <a routerLink="/event" [class.active]="currentUrl == '/event'">
+        <span class="material-icons">search</span>
+    </a>
+    <a routerLink="/event/create" [class.active]="currentUrl == '/event/create'">
+        <span class="material-icons">add_box</span>
+    </a>
 </div>

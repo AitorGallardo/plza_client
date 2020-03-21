@@ -9,12 +9,7 @@ import { DomSanitizer } from '@angular/platform-browser';
 })
 export class FooterbarComponent implements OnInit {
 
-  constructor(private matIconRegistry: MatIconRegistry,private domSanitizer: DomSanitizer) {
-    this.matIconRegistry.addSvgIcon(
-      "unicorn",
-      this.domSanitizer.bypassSecurityTrustResourceUrl('../assets/icons/svg_icons/home-white-24dp.svg')
-    );
-   }
+  constructor() {}
 
   ngOnInit() {
   }
