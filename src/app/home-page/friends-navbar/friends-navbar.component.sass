@@ -1,0 +1,41 @@
+.container
+  display: grid
+  grid-template-columns: repeat(auto-fit, minmax(75px, 1fr))
+  grid-auto-flow: column
+  grid-auto-columns: auto
+  overflow-y: hidden
+  overflow-x: scroll
+  // display: flex
+  // flex-direction: row
+  justify-items: center
+  height: 85px
+  background-color: #2d2e2ec7
+  .member-container
+      display: flex
+      width: 100%
+      padding: 10px
+      flex-direction: column
+      align-items: center
+      font-size: 12px
+      text-align: center
+      word-break: break-word
+      .member-avatar
+          height: 50px
+          width: 50px
+          border-radius: 50px
+          background-color: #006bff54
+          margin-bottom: 5px
+      .member-name
+        color: white
+        font-size: 9px
+
+.friend
+    display: flex
+    flex-direction: column
+    justify-content: center
+    align-items: center
+
+img
+    width: 43px
+    height: 43px
+    border-radius: 50%

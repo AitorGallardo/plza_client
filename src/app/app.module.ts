@@ -11,7 +11,7 @@ import {AgmCoreModule} from '@agm/core';
 import { MainMapComponent } from './home-page/main-map/main-map.component';
 import { LoadingPageComponent } from './loading-page/loading-page.component';
 import { HomePageComponent } from './home-page/home-page.component';
-import { NavbarComponent } from './home-page/navbar/navbar.component';
+import { NavbarComponent } from './home-page/friends-navbar/friends-navbar.component';
 import { EventCreateComponent } from './events/event-create/event-create.component';
 import { ReactiveFormsModule } from '@angular/forms'; 
 import { HttpClientModule } from '@angular/common/http';

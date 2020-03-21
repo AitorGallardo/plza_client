@@ -1,9 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 
 @Component({
-  selector: 'app-navbar',
-  templateUrl: './navbar.component.html',
-  styleUrls: ['./navbar.component.sass']
+  selector: 'app-friends-navbar',
+  templateUrl: './friends-navbar.component.html',
+  styleUrls: ['./friends-navbar.component.sass']
 })
 export class NavbarComponent implements OnInit {
 
@@ -19,6 +19,18 @@ export class NavbarComponent implements OnInit {
     {
       name: 'davidjuanola7',
       image: 'assets/icons/juanola_profile.jpg'
+    },
+    {
+      name: 'aitorturito',
+      image: 'assets/icons/turito_profile.jpg'
+    },
+    {
+      name: 'aitorturito',
+      image: 'assets/icons/turito_profile.jpg'
+    },
+    {
+      name: 'aitorturito',
+      image: 'assets/icons/turito_profile.jpg'
     },
     {
       name: 'aitorturito',
