@@ -19,6 +19,7 @@ import { FileUploaderComponent } from './file-uploader/file-uploader.component';
 import { FooterbarComponent } from './footerbar/footerbar.component';
 import { MatIconModule } from '@angular/material/icon';
 import { MainbarComponent } from './mainbar/mainbar.component';
+import { SearchComponent } from './search/search.component';
 
 @NgModule({
   declarations: [
@@ -33,7 +34,8 @@ import { MainbarComponent } from './mainbar/mainbar.component';
     EventCreateComponent,
     FileUploaderComponent,
     FooterbarComponent,
-    MainbarComponent
+    MainbarComponent,
+    SearchComponent
   ],
   imports: [
     BrowserModule,

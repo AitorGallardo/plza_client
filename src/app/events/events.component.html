@@ -1,5 +1,4 @@
 <div id="component-container">
-  <h1>Events</h1>
   <ul [@listStagger]="events">
     <li *ngFor="let event of events">
       <a (click)="navigate(event)">{{ event.name }}</a>  
@@ -8,3 +7,4 @@
     </li>
   </ul>
 </div>
+

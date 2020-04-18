@@ -66,9 +66,10 @@ export class EventService {
     const data = JSON.stringify(event);
     formData.append('data', data);
 
-    return this.http.post(this.eventUrl, JSON.stringify(obj), {
-      headers: header
-    }).pipe(
+    console.log('formdata', formData.get('image'));
+    
+
+    return this.http.post(this.eventUrl, formData).pipe(
       map(res => {
         const event = Event.create(res)
         return event;

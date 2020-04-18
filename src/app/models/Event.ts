@@ -19,7 +19,6 @@ export class Event {
    }
 
    static create(json): Event {
-      console.log('JSON', json);
       const event = new Event();
       if (json) {
          event.id = json._id ? json._id : null;

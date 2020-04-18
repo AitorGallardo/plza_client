@@ -39,6 +39,13 @@
         <div *ngIf="submitted && f.time.errors" class="invalid-field">Time is required</div>
       </div>
 
+      <div class="field name">
+        <label for="name">
+            Description
+          </label>
+          <textarea rows="5" formControlName="description"></textarea>
+      </div>
+
       <div class="field hour">
         <label>
           Image

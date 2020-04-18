@@ -43,6 +43,7 @@ export class EventCreateComponent implements OnInit, AfterViewInit {
     this.form = this.formBuilder.group({
       name: ['', Validators.required],
       nParticipants: ['', []],
+      description: ['', []],
       date: ['', Validators.required],
       time: ['', Validators.required]
     });
@@ -73,6 +74,7 @@ export class EventCreateComponent implements OnInit, AfterViewInit {
       const event = new Event();
       event.name = this.form.get('name').value;
       event.max_members = this.form.get('nParticipants').value;
+      event.description = this.form.get('description').value;
       const date = this.form.get('date').value;
       const time = this.form.get('time').value;
       event.date = this.generateDate(date, time);

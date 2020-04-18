@@ -1,3 +1,4 @@
+import { SearchComponent } from './search/search.component';
 
 import { HomePageComponent } from './home-page/home-page.component';
 import { MainMapComponent } from './home-page/main-map/main-map.component';
@@ -12,6 +13,10 @@ const routes: Routes = [
 {
   path: '',
   component: HomePageComponent
+},
+{
+  path: 'search',
+  component: SearchComponent
 },
 {
   path: 'event',
