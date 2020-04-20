@@ -24,6 +24,19 @@ export class AuthenticationService {
         return this.currentUserSubject.value;
     }
 
+    signup(username: string, password: string) {
+        const url = this.authUrl + 'signup/';
+
+        return this.http.post(url, { username, password })
+            .pipe(map((user: any) => {
+                // store user details and jwt token in local storage to keep user logged in between page refreshes
+
+                localStorage.setItem('currentUser', JSON.stringify(user));
+                this.currentUserSubject.next(user);
+                return user;
+            }));
+    }
+
     login(username: string, password: string) {
         const url = this.authUrl + 'login/';
 

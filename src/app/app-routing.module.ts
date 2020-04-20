@@ -1,3 +1,4 @@
+
 import { LoginComponent } from './profile/login/login.component';
 import { SearchComponent } from './search/search.component';
 
@@ -9,6 +10,7 @@ import { Routes, RouterModule } from '@angular/router';
 import { EventsComponent } from './events/events.component';
 import { EventCreateComponent } from './events/event-create/event-create.component';
 import { ProfileComponent } from './profile/profile.component';
+import { SignupWithMailComponent } from './profile/signup/signup-with-mail/signup-with-mail.component';
 
 
 const routes: Routes = [
@@ -19,6 +21,14 @@ const routes: Routes = [
 {
   path: 'search',
   component: SearchComponent
+},
+{
+  path: 'login',
+  component: LoginComponent
+},
+{
+  path: 'signup',
+  component: SignupWithMailComponent
 },
 {
   path: 'profile',

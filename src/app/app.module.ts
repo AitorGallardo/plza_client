@@ -26,6 +26,8 @@ import { JwtInterceptor } from './helpers/jwt.interceptor';
 import { SignupComponent } from './profile/signup/signup.component';
 import { UserProfileComponent } from './profile/user-profile/user-profile.component';
 import { ProfileComponent } from './profile/profile.component';
+import { SignupWithMailComponent } from './profile/signup/signup-with-mail/signup-with-mail.component';
+
 
 @NgModule({
   declarations: [
@@ -45,7 +47,8 @@ import { ProfileComponent } from './profile/profile.component';
     LoginComponent,
     SignupComponent,
     UserProfileComponent,
-    ProfileComponent
+    ProfileComponent,
+    SignupWithMailComponent
   ],
   imports: [
     BrowserModule,

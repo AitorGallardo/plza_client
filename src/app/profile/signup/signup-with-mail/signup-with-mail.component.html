@@ -5,7 +5,7 @@
         </div>
         <div class="main">
             <div class="header">
-                Log in
+                Sign up
             </div>
             <div class="content">
                 <form [formGroup]="loginForm" (ngSubmit)="onSubmit()">
@@ -17,10 +17,7 @@
                         <input type="password" formControlName="password" placeholder="Password" [ngClass]="{ 'is-invalid': submitted && f.password.errors }" />
                         <div *ngIf="submitted && f.password.errors" class="invalid-field"> Password is required</div>
                     </div>
-                    <div class="forgot-password">
-                        Forgot password?
-                    </div>
-                    <button>Log in</button>
+                    <button>Sign Up</button>
                     <div *ngIf="error" class="alert alert-danger mt-3 mb-0">{{error}}</div>
                 </form>
             </div>

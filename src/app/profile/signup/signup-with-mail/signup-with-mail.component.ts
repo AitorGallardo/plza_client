@@ -1,15 +1,15 @@
 import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormBuilder, Validators } from '@angular/forms';
 import { ActivatedRoute, Router } from '@angular/router';
-import { AuthenticationService } from '../../services/authentication.service';
+import { AuthenticationService } from 'src/app/services/authentication.service';
+
 
 @Component({
-  selector: 'app-login',
-  templateUrl: './login.component.html',
-  styleUrls: ['./login.component.sass']
+  selector: 'app-signup-with-mail',
+  templateUrl: './signup-with-mail.component.html',
+  styleUrls: ['./signup-with-mail.component.sass']
 })
-export class LoginComponent implements OnInit {
-
+export class SignupWithMailComponent implements OnInit {
   loginForm: FormGroup;
   loading = false;
   submitted = false;
