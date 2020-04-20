@@ -24,7 +24,6 @@ import { SearchComponent } from './search/search.component';
 import { LoginComponent } from './profile/login/login.component';
 import { JwtInterceptor } from './helpers/jwt.interceptor';
 import { SignupComponent } from './profile/signup/signup.component';
-import { UserProfileComponent } from './profile/user-profile/user-profile.component';
 import { ProfileComponent } from './profile/profile.component';
 import { SignupWithMailComponent } from './profile/signup/signup-with-mail/signup-with-mail.component';
 
@@ -46,7 +45,6 @@ import { SignupWithMailComponent } from './profile/signup/signup-with-mail/signu
     SearchComponent,
     LoginComponent,
     SignupComponent,
-    UserProfileComponent,
     ProfileComponent,
     SignupWithMailComponent
   ],

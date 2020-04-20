@@ -1,27 +1,29 @@
-<div class="container">
-    <div class="top">
-        <img class="logo" src="/assets/icons/plza_main_icon_black.png">
-        <div class="signup-options">
-            <div class="field" routerLink="/signup">
-                <span class="material-icons icon">person</span>
-
-                <div class="text">Sign up</div>
-            </div>
-            <div class="field">
-                <div class="icon">
-                    <img src="assets/icons/google_signup.png" alt="">
+<div id="component-container">
+    <div class="container">
+        <div class="top">
+            <img class="logo" src="/assets/icons/plza_main_icon_black.png">
+            <div class="signup-options">
+                <div class="field"  [routerLink]="['signup']">
+                    <span class="material-icons icon">person</span>
+    
+                    <div class="text">Sign up</div>
                 </div>
-                <div class="text">Sign up with Google</div>
-            </div>
-            <div class="field">
-                <div class="icon">
-                    <img src="assets/icons/facebook_signup.png" alt="">
+                <div class="field">
+                    <div class="icon">
+                        <img src="assets/icons/google_signup.png" alt="">
+                    </div>
+                    <div class="text">Sign up with Google</div>
                 </div>
-                <div class="text">Sign up with Facebook</div>
+                <div class="field">
+                    <div class="icon">
+                        <img src="assets/icons/facebook_signup.png" alt="">
+                    </div>
+                    <div class="text">Sign up with Facebook</div>
+                </div>
             </div>
         </div>
-    </div>
-    <div class="footer-login">
-        Already have an account? <a routerLink="/login">Log in</a> 
+        <div class="footer-login">
+            Already have an account? <a [routerLink]="['login']">Log in</a> 
+        </div>
     </div>
 </div>

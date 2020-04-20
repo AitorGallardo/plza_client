@@ -49,7 +49,7 @@ export class SignupWithMailComponent implements OnInit {
     }
 
     this.loading = true;
-    this.authenticationService.login(this.f.username.value, this.f.password.value)
+    this.authenticationService.signup(this.f.username.value, this.f.password.value)
         .subscribe(
             data => {
                 this.router.navigate([this.returnUrl]);

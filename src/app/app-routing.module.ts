@@ -1,3 +1,4 @@
+import { SignupComponent } from './profile/signup/signup.component';
 
 import { LoginComponent } from './profile/login/login.component';
 import { SearchComponent } from './search/search.component';
@@ -11,6 +12,7 @@ import { EventsComponent } from './events/events.component';
 import { EventCreateComponent } from './events/event-create/event-create.component';
 import { ProfileComponent } from './profile/profile.component';
 import { SignupWithMailComponent } from './profile/signup/signup-with-mail/signup-with-mail.component';
+import { AuthGuard } from './helpers/auth.guard';
 
 
 const routes: Routes = [
@@ -23,16 +25,17 @@ const routes: Routes = [
   component: SearchComponent
 },
 {
-  path: 'login',
-  component: LoginComponent
-},
-{
-  path: 'signup',
-  component: SignupWithMailComponent
+  path: 'account',
+  children: [
+    {path: 'signup', component: SignupWithMailComponent},
+    {path: 'login', component: LoginComponent},
+    {path: '', component: SignupComponent, pathMatch: 'full'},
+  ]
 },
 {
   path: 'profile',
-  component: ProfileComponent
+  component: ProfileComponent,
+  canActivate: [AuthGuard]
 },
 {
   path: 'event',
