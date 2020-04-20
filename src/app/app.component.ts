@@ -1,6 +1,5 @@
 import { Component } from '@angular/core';
 import { Plugins } from '@capacitor/core';
-import { BasicRequestsService } from './basic-requests.service';
 
 const { SplashScreen } = Plugins;
 
@@ -18,7 +17,7 @@ export class AppComponent {
 
 
 
-  constructor(private apiRequestService: BasicRequestsService) {
+  constructor() {
 
     // Hide splash screen on mobile
     SplashScreen.hide();
@@ -27,8 +26,6 @@ export class AppComponent {
     // setTimeout(() => {
     //   this.loadingPage = false;
     // }, 1750);
-
-    this.apiRequestService.getAll();
 
   }
 

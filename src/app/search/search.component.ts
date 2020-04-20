@@ -1,6 +1,6 @@
 import { Component, OnInit, ViewChild, ElementRef } from '@angular/core';
 import { Router } from '@angular/router';
-import { EventService } from '../event.service';
+import { EventService } from '../services/event.service';
 import { trigger, style, transition, animate, keyframes, query, stagger } from '@angular/animations';
 import { Event } from '../models/Event';
 

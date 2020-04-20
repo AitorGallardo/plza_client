@@ -1,3 +1,4 @@
+import { ErrorInterceptor } from './helpers/error.interceptor';
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 
@@ -14,12 +15,17 @@ import { HomePageComponent } from './home-page/home-page.component';
 import { NavbarComponent } from './home-page/friends-navbar/friends-navbar.component';
 import { EventCreateComponent } from './events/event-create/event-create.component';
 import { ReactiveFormsModule } from '@angular/forms'; 
-import { HttpClientModule } from '@angular/common/http';
+import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 import { FileUploaderComponent } from './file-uploader/file-uploader.component';
 import { FooterbarComponent } from './footerbar/footerbar.component';
 import { MatIconModule } from '@angular/material/icon';
 import { MainbarComponent } from './mainbar/mainbar.component';
 import { SearchComponent } from './search/search.component';
+import { LoginComponent } from './profile/login/login.component';
+import { JwtInterceptor } from './helpers/jwt.interceptor';
+import { SignupComponent } from './profile/signup/signup.component';
+import { UserProfileComponent } from './profile/user-profile/user-profile.component';
+import { ProfileComponent } from './profile/profile.component';
 
 @NgModule({
   declarations: [
@@ -35,7 +41,11 @@ import { SearchComponent } from './search/search.component';
     FileUploaderComponent,
     FooterbarComponent,
     MainbarComponent,
-    SearchComponent
+    SearchComponent,
+    LoginComponent,
+    SignupComponent,
+    UserProfileComponent,
+    ProfileComponent
   ],
   imports: [
     BrowserModule,
@@ -48,7 +58,10 @@ import { SearchComponent } from './search/search.component';
       apiKey:'AIzaSyC-VC074vkUxKjfBLR-PZsnkryEEBjI2rI'
     })
   ],
-  providers: [],
+  providers: [
+    { provide: HTTP_INTERCEPTORS, useClass: JwtInterceptor, multi: true },
+    { provide: HTTP_INTERCEPTORS, useClass: ErrorInterceptor, multi: true },
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

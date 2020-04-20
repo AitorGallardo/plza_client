@@ -1,4 +1,4 @@
-import { EventService } from 'src/app/event.service';
+import { EventService } from 'src/app/services/event.service';
 import { Component, OnInit, ViewChild, ElementRef, AfterViewInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { Event } from '../../models/Event';
