@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Output, EventEmitter } from '@angular/core';
 
 @Component({
   selector: 'app-profile-sidenav',
@@ -7,9 +7,15 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ProfileSidenavComponent implements OnInit {
 
+  @Output() logout = new EventEmitter();
+
   constructor() { }
 
   ngOnInit() {
+  }
+
+  onLogout(){
+    this.logout.emit();
   }
 
 }

@@ -28,9 +28,9 @@ export class AuthenticationService {
         const url = this.authUrl + 'signup/';
 
         return this.http.post(url, { username, password })
-            .pipe(map((user: any) => {
+            .pipe(map((res: any) => {
                 // store user details and jwt token in local storage to keep user logged in between page refreshes
-
+                const user = User.create(res.response)
                 localStorage.setItem('currentUser', JSON.stringify(user));
                 this.currentUserSubject.next(user);
                 return user;
@@ -41,9 +41,9 @@ export class AuthenticationService {
         const url = this.authUrl + 'login/';
 
         return this.http.post(url, { username, password })
-            .pipe(map((user: any) => {
+            .pipe(map((res: any) => {
                 // store user details and jwt token in local storage to keep user logged in between page refreshes
-
+                const user = User.create(res.response)
                 localStorage.setItem('currentUser', JSON.stringify(user));
                 this.currentUserSubject.next(user);
                 return user;
