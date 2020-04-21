@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ViewChild } from '@angular/core';
+import { MatDrawer } from '@angular/material/sidenav';
 
 @Component({
   selector: 'app-profile',
@@ -7,9 +8,16 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ProfileComponent implements OnInit {
 
+  clickk = false;
+  @ViewChild('sidenav', {static: true}) sidenav: MatDrawer;
+
   constructor() { }
 
   ngOnInit() {
+  }
+
+  openCloseSidenav(){
+    this.sidenav.toggle();
   }
 
 }

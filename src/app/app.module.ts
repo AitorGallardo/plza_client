@@ -27,6 +27,8 @@ import { SignupComponent } from './profile/signup/signup.component';
 import { ProfileComponent } from './profile/profile.component';
 import { SignupWithMailComponent } from './profile/signup/signup-with-mail/signup-with-mail.component';
 import { ProfileGridComponent } from './profile/profile-grid/profile-grid.component';
+import {MatSidenavModule} from '@angular/material/sidenav';
+import { ProfileSidenavComponent } from './profile/profile-sidenav/profile-sidenav.component';
 
 
 @NgModule({
@@ -49,6 +51,7 @@ import { ProfileGridComponent } from './profile/profile-grid/profile-grid.compon
     ProfileComponent,
     SignupWithMailComponent,
     ProfileGridComponent,
+    ProfileSidenavComponent,
   ],
   imports: [
     BrowserModule,
@@ -57,6 +60,7 @@ import { ProfileGridComponent } from './profile/profile-grid/profile-grid.compon
     ReactiveFormsModule,
     HttpClientModule,
     MatIconModule,
+    MatSidenavModule,
     AgmCoreModule.forRoot({
       apiKey:'AIzaSyC-VC074vkUxKjfBLR-PZsnkryEEBjI2rI'
     })
