@@ -1,6 +1,30 @@
 <div class="container">
-    <div class="tab-navigator"></div>
-    <div class="content-grid">
-        <div class="content" *ngFor="let item of items"></div>
-    </div>
+        <mat-tab-group mat-align-tabs="center" disableRipple [selectedIndex]="0" focusIndex="1">
+            <mat-tab label="First">
+                <div class="content-grid">
+                    <ng-template mat-tab-label>
+                        <span class="material-icons">
+                            collections
+                            </span>
+                    </ng-template>
+                    <div class="content" [style.background-image]="'url(' + image + ')'" *ngFor="let image of images"></div>
+                </div>
+            </mat-tab>
+            <mat-tab label="Second">
+                <ng-template mat-tab-label>
+                    <span class="material-icons">
+                        event
+                        </span>
+                </ng-template>
+                <div class="tab2">
+                    <ng-template mat-tab-label>
+                        <span class="material-icons">
+                            collections
+                            </span>
+                    </ng-template>
+                    <div class="content" *ngFor="let item of items"></div>
+                </div>
+            </mat-tab>
+          </mat-tab-group>
 </div>
+

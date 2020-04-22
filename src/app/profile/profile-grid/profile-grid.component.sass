@@ -1,7 +1,7 @@
 
 .container
-    height: 100%
-    background-color: pink
+    //height: 100%
+    background-color: white
     .tab-navigator
         height: 50px      
     .content-grid
@@ -13,3 +13,27 @@
             width: 124px
             background-color: lightblue
             border: 1px solid black
+            background-size: cover
+            background-position: center
+
+    .tab2
+        display: grid
+        grid-template-columns: repeat(auto-fit, minmax(125px, 1fr))
+        justify-items: center
+        .content
+            height: 160px
+            width: 124px
+            background-color: #e4e6ad
+            border: 1px solid black
+
+mat-tab-group
+    //width: 50%
+
+::ng-deep.mat-tab-label.mat-tab-label-active 
+    opacity: 1
+
+
+
+
+.material-icons
+    //color: white

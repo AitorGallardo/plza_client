@@ -28,6 +28,7 @@ import { ProfileComponent } from './profile/profile.component';
 import { SignupWithMailComponent } from './profile/signup/signup-with-mail/signup-with-mail.component';
 import { ProfileGridComponent } from './profile/profile-grid/profile-grid.component';
 import {MatSidenavModule} from '@angular/material/sidenav';
+import {MatTabsModule} from '@angular/material/tabs';
 import { ProfileSidenavComponent } from './profile/profile-sidenav/profile-sidenav.component';
 
 
@@ -51,7 +52,7 @@ import { ProfileSidenavComponent } from './profile/profile-sidenav/profile-siden
     ProfileComponent,
     SignupWithMailComponent,
     ProfileGridComponent,
-    ProfileSidenavComponent,
+    ProfileSidenavComponent
   ],
   imports: [
     BrowserModule,
@@ -61,6 +62,7 @@ import { ProfileSidenavComponent } from './profile/profile-sidenav/profile-siden
     HttpClientModule,
     MatIconModule,
     MatSidenavModule,
+    MatTabsModule,
     AgmCoreModule.forRoot({
       apiKey:'AIzaSyC-VC074vkUxKjfBLR-PZsnkryEEBjI2rI'
     })

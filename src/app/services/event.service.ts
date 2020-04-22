@@ -11,7 +11,7 @@ import { Event } from '../models/Event';
 export class EventService {
 
   API_URL = environment.api;
-  eventUrl = environment.api + 'api/event/'
+  eventUrl = environment.api + 'api/events/'
 
   currentEventId = null;
 
