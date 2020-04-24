@@ -1,3 +1,4 @@
+import { ProfileEditComponent } from './profile/profile-edit/profile-edit.component';
 import { SignupComponent } from './profile/signup/signup.component';
 
 import { LoginComponent } from './profile/login/login.component';
@@ -34,7 +35,10 @@ const routes: Routes = [
 },
 {
   path: 'profile',
-  component: ProfileComponent,
+  children: [
+    {path: 'edit', component: ProfileEditComponent},
+    {path: '', component: ProfileComponent, pathMatch: 'full'},
+  ],
   canActivate: [AuthGuard]
 },
 {

@@ -30,6 +30,7 @@ import { ProfileGridComponent } from './profile/profile-grid/profile-grid.compon
 import {MatSidenavModule} from '@angular/material/sidenav';
 import {MatTabsModule} from '@angular/material/tabs';
 import { ProfileSidenavComponent } from './profile/profile-sidenav/profile-sidenav.component';
+import { ProfileEditComponent } from './profile/profile-edit/profile-edit.component';
 
 
 @NgModule({
@@ -52,7 +53,8 @@ import { ProfileSidenavComponent } from './profile/profile-sidenav/profile-siden
     ProfileComponent,
     SignupWithMailComponent,
     ProfileGridComponent,
-    ProfileSidenavComponent
+    ProfileSidenavComponent,
+    ProfileEditComponent
   ],
   imports: [
     BrowserModule,

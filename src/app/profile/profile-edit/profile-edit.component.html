@@ -1,0 +1,39 @@
+<div id="component-container">
+    <div class="container">
+        <div class="header">
+            <span class="material-icons" routerLink="..">
+                arrow_back
+                </span>
+            <!-- <span (click)="drawer.toggle()" class="material-icons">menu</span> -->
+        </div>
+        <div class="content">
+            <div class="avatar-username">
+                <div class="avatar" [style.background-image]="'url(' + avatar + ')'">
+                </div>
+                        <span class="material-icons">
+                            photo_camera
+                            </span>
+            </div> 
+            <form [formGroup]="form" (ngSubmit)="onSubmit()">
+                <div class="field name">
+                    <label for="Username">
+                        Username
+                      </label>
+                    <input id="Username" type="text" formControlName="username" [ngClass]="{ 'is-invalid': submitted && f.username.errors }">
+                </div>
+                <div class="field name">
+                    <label for="Instagram">
+                        Instagram
+                      </label>
+                    <input id="Instagram" type="text" formControlName="instagram" [ngClass]="{ 'is-invalid': submitted && f.instagram.errors }">
+                </div>
+                <div class="field name">
+                    <label for="Description">
+                        Description
+                      </label>
+                    <input id="Description" type="text" formControlName="description" [ngClass]="{ 'is-invalid': submitted && f.description.errors }">
+                </div>
+            </form>
+        </div>
+    </div>
+</div>

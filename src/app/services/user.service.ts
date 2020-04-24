@@ -17,7 +17,7 @@ export class UserService {
     getUser(id: string): Observable<User> {
 
         const url = this.eventUrl + id;
-    
+        
         return this.http.get(url).pipe(
           map(res => {
             const user = User.create(res)

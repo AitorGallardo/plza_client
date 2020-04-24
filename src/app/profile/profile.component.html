@@ -15,7 +15,7 @@
                     </div>
                     <div class="content">
                         <div class="avatar-username">
-                            <div class="avatar"></div>
+                            <div class="avatar" [style.background-image]="'url(' + user.avatar + ')'"></div>
                             <div class="username">{{user.username}}</div>
                         </div>
                         <div class="user-data">
@@ -33,7 +33,7 @@
                             </div>
                         </div>
                         <div class="button-zone">
-                            <button>Edit profile</button>
+                            <button [routerLink]="['edit']" >Edit profile</button>
                         </div>
                         <div class="description"></div>
                         <app-profile-grid class="el-grid" [images]="user.images"></app-profile-grid>

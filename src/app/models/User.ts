@@ -6,6 +6,7 @@ export class User {
     lastName: string;
     avatar: string;
     description: string;
+    instagram: string;
     following: Array<String>;
     followers: Array<String>;
     events: Array<String>;
@@ -22,6 +23,7 @@ export class User {
             user.username = json.username ? json.username : null;
             user.description = json.description ? json.description : null;
             user.avatar = json.avatar ? json.avatar : null;
+            user.instagram = json.instagram ? json.instagram : null;
             user.following = json.following ? json.following : [];
             user.followers = json.followers ? json.followers : [];
             user.events = json.events ? json.events : [];
