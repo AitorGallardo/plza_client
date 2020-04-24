@@ -1,11 +1,22 @@
-.rectangle
+$background-color: var(--background-color)
+$icon-color: var(--icon-color)
+$icon-size: var(--icon-size)
+
+.background-container
     display: flex
     justify-content: center
     align-items: center
     height: 100%
     width: 100%
-    border: 1px solid lightgrey
-    border-radius:5px
+    background-color: $background-color
+
+
+.background-image
+    background-size: cover
+    background-position: center
+    height: 100%
+    width: 100%
 
 .material-icons
-    font-size: 48px
+    font-size: $icon-size
+    color: $icon-color

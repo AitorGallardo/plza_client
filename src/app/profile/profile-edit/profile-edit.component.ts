@@ -1,8 +1,9 @@
 import { AuthenticationService } from './../../services/authentication.service';
 import { UserService } from './../../services/user.service';
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ViewChild } from '@angular/core';
 import { Validators, FormGroup, FormBuilder } from '@angular/forms';
 import { User } from 'src/app/models/User';
+import { FileUploaderComponent, DefaultFUBackground } from 'src/app/file-uploader/file-uploader.component';
 
 @Component({
   selector: 'app-profile-edit',
@@ -10,6 +11,10 @@ import { User } from 'src/app/models/User';
   styleUrls: ['./profile-edit.component.sass']
 })
 export class ProfileEditComponent implements OnInit {
+
+  @ViewChild('fileUploader', { static: false }) fileUploader: FileUploaderComponent;
+  fileUploaderOptions: DefaultFUBackground = new DefaultFUBackground('photo_camera', null, 'white');
+
   form: FormGroup;
   username= null;
   avatar = ''
@@ -34,6 +39,10 @@ export class ProfileEditComponent implements OnInit {
       this.form.get('instagram').patchValue(user.instagram);
       this.form.get('description').patchValue(user.description);
     })
+  }
+
+  uploadFile(){
+    this.fileUploader.upload();
   }
 
 }

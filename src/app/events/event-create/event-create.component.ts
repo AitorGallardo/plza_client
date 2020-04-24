@@ -1,3 +1,4 @@
+import { FileUploaderComponent, DefaultFUBackground } from './../../file-uploader/file-uploader.component';
 import { EventService } from 'src/app/services/event.service';
 import { Component, OnInit, ViewChild, ElementRef, AfterViewInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
@@ -26,7 +27,8 @@ export class EventCreateComponent implements OnInit, AfterViewInit {
   mapOptions: google.maps.MapOptions;
   marker: google.maps.Marker;
   @ViewChild('mapContainer', { static: false }) gmap: ElementRef;
-
+  @ViewChild('fileUploader', { static: false }) fileUploader: FileUploaderComponent;
+  fileUploaderOptions: DefaultFUBackground = new DefaultFUBackground(null, '48px');
 
   constructor(private formBuilder: FormBuilder, private eventService: EventService, 
     private mapsAPILoader: MapsAPILoader, private router: Router) {
@@ -47,6 +49,10 @@ export class EventCreateComponent implements OnInit, AfterViewInit {
       date: ['', Validators.required],
       time: ['', Validators.required]
     });
+  }
+
+  uploadFile(){
+    this.fileUploader.upload();
   }
 
   ngOnInit() {

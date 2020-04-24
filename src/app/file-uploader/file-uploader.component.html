@@ -3,9 +3,9 @@
   type="file" (change)="onFileChanged($event)"
   #fileInput>
 
-  <div class="rectangle" (click)="fileInput.click()">
+  <div class="background-container" (click)="clickUpload()">
     <span class="material-icons" *ngIf="!imageSrc">
-        insert_photo
+        {{defaultValues.icon}}
     </span>
-      <img [src]="imageSrc" height="200" width="200" *ngIf="imageSrc">
+    <div  class="background-image" *ngIf="imageSrc&&enableBackground" [style.background-image]="'url(' + imageSrc + ')'">
   </div>
