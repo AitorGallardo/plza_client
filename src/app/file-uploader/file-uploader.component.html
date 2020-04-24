@@ -4,8 +4,8 @@
   #fileInput>
 
   <div class="background-container" (click)="clickUpload()">
-    <span class="material-icons" *ngIf="!imageSrc">
+    <span class="material-icons" *ngIf="!imageSrc || !showBackgroundImage">
         {{defaultValues.icon}}
     </span>
-    <div  class="background-image" *ngIf="imageSrc&&enableBackground" [style.background-image]="'url(' + imageSrc + ')'">
+    <div  class="background-image" *ngIf="imageSrc&&showBackgroundImage" [style.background-image]="'url(' + imageSrc + ')'">
   </div>

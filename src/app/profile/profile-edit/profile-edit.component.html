@@ -10,7 +10,7 @@
             <div class="avatar-username">
                 <div class="avatar" [style.background-image]="'url(' + avatar + ')'">
                 </div>
-                <app-file-uploader #fileUploader [defaultValues]="fileUploaderOptions" (image)="image = $event">   
+                <app-file-uploader #fileUploader [showBackgroundImage]="false" [defaultValues]="fileUploaderOptions" (image)="changeAvatar($event)" (imageBackground)="changeAvatarBackground($event)">   
                 </app-file-uploader>
                 <!-- <span class="material-icons">
                     photo_camera

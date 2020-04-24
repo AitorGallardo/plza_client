@@ -30,7 +30,7 @@ export class FileUploaderComponent implements OnInit {
   @ViewChild('fileInput', { static: false }) fileInput: ElementRef;
 
   @Input() defaultValues: DefaultFUBackground = new DefaultFUBackground();
-  @Input() enableBackground = true;
+  @Input() showBackgroundImage = true;
   @Input() disableUploadOnClick = false;
 
   @Output() image = new EventEmitter();
@@ -63,9 +63,9 @@ export class FileUploaderComponent implements OnInit {
       reader.readAsDataURL(file);
       reader.onload = (e: any) => {
         this.imageSrc = e.target.result;
+        this.imageBackground.emit(this.imageSrc);
       }
       this.image.emit(file);
-      this.imageBackground.emit(this.imageSrc);
     }
   }
 

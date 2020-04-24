@@ -41,6 +41,15 @@ export class ProfileEditComponent implements OnInit {
     })
   }
 
+  changeAvatar(event){
+    console.log(this.form.value); 
+  }
+  changeAvatarBackground(event){
+    this.avatar = event;
+    console.log('avatar', this.avatar);
+    
+  }
+
   uploadFile(){
     this.fileUploader.upload();
   }
