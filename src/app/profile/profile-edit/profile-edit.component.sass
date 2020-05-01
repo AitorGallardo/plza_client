@@ -8,10 +8,26 @@
     .header
         display: flex
         padding: 20px
-        justify-content: flex-start
+        justify-content: space-between
         height:5%
         .material-icons
             color: white
+        button
+            border-radius: 5px
+            background-color: #00a8ffbf
+            display: inline-block
+            padding: 0px 20px
+            color: #fff
+            letter-spacing: .1em
+            border: 0
+            font-weight: 500
+            cursor: pointer
+            font-size: 12px
+            outline: none
+            &:hover
+                background-color: #00A8FF
+            &.disabled
+                background-color: #00a8ff6e
     .content
         flex-grow: 1
         height: 95%
@@ -46,8 +62,7 @@
                 border-radius: 50%
                 height: 120px
                 width: 120px
-
-        form
+        .fields-container
             display: flex
             flex-direction: column
             padding: 0px 20px

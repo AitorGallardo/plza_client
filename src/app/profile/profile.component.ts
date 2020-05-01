@@ -24,11 +24,9 @@ export class ProfileComponent implements OnInit {
               private authService: AuthenticationService) {
 
                 const username = this.authService.currentUserValue.username;
+                
                 this.userService.getUser(username).subscribe(user=>{
-          
-                  
                   this.user = user;
-                  
                 })
                }
 

@@ -4,7 +4,7 @@ export class User {
     password: string;
     firstName: string;
     lastName: string;
-    avatar: string;
+    avatar: any;
     description: string;
     instagram: string;
     following: Array<String>;

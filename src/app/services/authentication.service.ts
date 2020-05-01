@@ -23,6 +23,16 @@ export class AuthenticationService {
     public get currentUserValue(): User {
         return this.currentUserSubject.value;
     }
+    public updateCurrentUserValue(user) {
+        const currentUser = JSON.parse(localStorage.getItem('currentUser'));
+        const updatedUser = {
+            ...currentUser,
+            ...user
+        }
+        console.log('updatedUser',updatedUser);
+        localStorage.setItem('currentUser', JSON.stringify(updatedUser));
+        this.currentUserSubject.next(updatedUser);  
+    }
 
     signup(username: string, password: string) {
         const url = this.authUrl + 'signup/';
