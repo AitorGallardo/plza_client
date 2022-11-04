@@ -7,7 +7,7 @@
                             collections
                             </span>
                     </ng-template>
-                    <div class="content" [style.background-image]="'url(' + image + ')'" *ngFor="let image of images"></div>
+                    <div class="content" [style.background-image]="'url(' + image + ')'" *ngFor="let image of fakeImages"></div>
                 </div>
             </mat-tab>
             <mat-tab label="Second">
@@ -17,11 +17,6 @@
                         </span>
                 </ng-template>
                 <div class="tab2">
-                    <ng-template mat-tab-label>
-                        <span class="material-icons">
-                            collections
-                            </span>
-                    </ng-template>
                     <div class="content" *ngFor="let item of items"></div>
                 </div>
             </mat-tab>

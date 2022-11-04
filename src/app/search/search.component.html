@@ -6,6 +6,6 @@
   </div>
   <div class="search-history" *ngIf="isSearching"></div>
   <div class="events-grid" *ngIf="!isSearching" [@listStagger]="events">
-    <div class="event" (click)="navigate(event)" [style.background]="'url(' + event.image + ')'" *ngFor="let event of events"></div>
+    <div class="event" (click)="navigate(event)" [style.background-image]="'url(' + event.image + ')'" *ngFor="let event of events"></div>
   </div>
 </div>

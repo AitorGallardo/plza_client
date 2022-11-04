@@ -10,6 +10,9 @@
 # dependencies
 /node_modules
 
+# some assets
+/test_assets
+
 # profiling files
 chrome-profiler-events*.json
 speed-measure-plugin*.json
