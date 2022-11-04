@@ -5,4 +5,4 @@
 <li>Compiled to Android using Capacitor</li>
 </ul>
 
-![Plza App](./plza_demo.gif)
+![Plza App](./plza_demo-x3.gif)
